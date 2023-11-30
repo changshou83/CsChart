@@ -1,0 +1,19 @@
+{
+  "title": "CSChart",
+  "assets": "./artwork",
+  "output": "website",
+  "logo": "./artwork/logo.png",
+  "github": "https://github.com/cs-vis/CSChart",
+  "siteGithub": "https://github.com/cs-vis/cs-vis.github.io",
+  "link": "https://github.com/cs-vis",
+  "theme": {
+    "mainColor": "#0C987C"
+  },
+  "scripts": [
+    "dist/cschart.min.js",
+    "docs/js/rough-renderer.min.js",
+    "docs/js/d3.layout.cloud.js",
+    "docs/js/d3.min.js",
+    "docs/js/topojson-client.min.js"
+  ]
+}

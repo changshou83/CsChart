@@ -1,5 +1,5 @@
 import { createContext } from './context';
-import { line, circle, text, rect, path } from './shape';
+import { line, circle, text, rect, path, ring } from './shape';
 import { restore, save, scale, translate, rotate } from './transform';
 
 export function createRenderer(
@@ -11,6 +11,7 @@ export function createRenderer(
     text: drawText = text,
     rect: drawRect = rect,
     path: drawPath = path,
+    ring: drawRing = ring,
     context: intensifyContext = (d) => d,
   } = {},
 ) {
@@ -23,6 +24,7 @@ export function createRenderer(
     text: (attributes) => drawText(context, attributes),
     rect: (attributes) => drawRect(context, attributes),
     path: (attributes) => drawPath(context, attributes),
+    ring: (attributes) => drawRing(context, attributes),
     // transform
     restore: () => restore(context),
     save: () => save(context),

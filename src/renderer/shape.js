@@ -39,12 +39,38 @@ export function ring(context, attributes) {
     const c1R = r1 + strokeWidth;
     const c2Width = r2 - r1 - strokeWidth * 2;
     return [
-      shape('circle', context, { ...rest, r: c1R, strokeWidth, fill: 'transparent', stroke: stroke || 'transparent' }),
-      shape('circle', context, { ...rest, r: c1R + c2Width, strokeWidth: c2Width, fill: 'transparent', stroke: fill || 'transparent' }),
-      shape('circle', context, { ...rest, r: r2, strokeWidth, fill: 'transparent', stroke: stroke || 'transparent' }),
+      shape('circle', context, {
+        ...rest,
+        r: c1R,
+        strokeWidth,
+        fill: 'transparent',
+        stroke: stroke || 'transparent',
+      }),
+      shape('circle', context, {
+        ...rest,
+        r: c1R + c2Width,
+        strokeWidth: c2Width,
+        fill: 'transparent',
+        stroke: fill || 'transparent',
+      }),
+      shape('circle', context, {
+        ...rest,
+        r: r2,
+        strokeWidth,
+        fill: 'transparent',
+        stroke: stroke || 'transparent',
+      }),
     ];
   }
-  return [shape('circle', context, { ...rest, r: r1, strokeWidth: r2 - r1, fill: 'transparent', stroke: fill || 'transparent' })];
+  return [
+    shape('circle', context, {
+      ...rest,
+      r: r1,
+      strokeWidth: r2 - r1,
+      fill: 'transparent',
+      stroke: fill || 'transparent',
+    }),
+  ];
 }
 
 export function shape(type, context, attributes) {
